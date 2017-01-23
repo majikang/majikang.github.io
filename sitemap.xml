@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.majikang.com/2017/01/13/suse11%E9%85%8D%E7%BD%AElaravel%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</loc>
+    <loc>http://www.majikang.com/posts/suse11%E9%85%8D%E7%BD%AElaravel%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html</loc>
     
-    <lastmod>2017-01-23T02:31:06.630Z</lastmod>
+    <lastmod>2017-01-23T05:53:12.190Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.majikang.com/about/index.html</loc>
+    
+    <lastmod>2017-01-23T05:33:48.157Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.majikang.com/posts/my-first-title.html</loc>
+    
+    <lastmod>2017-01-23T03:14:07.691Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.majikang.com/posts/hello-world.html</loc>
+    
+    <lastmod>2017-01-23T02:56:02.289Z</lastmod>
     
   </url>
   
@@ -12,20 +33,6 @@
     <loc>http://www.majikang.com/about/index.html</loc>
     
     <lastmod>2017-01-12T06:46:56.935Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.majikang.com/about/index.html</loc>
-    
-    <lastmod>2017-01-12T05:46:47.122Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.majikang.com/2017/01/10/hello-world/</loc>
-    
-    <lastmod>2017-01-10T15:44:40.708Z</lastmod>
     
   </url>
   

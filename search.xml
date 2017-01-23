@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>M</title>
-  <subtitle>Code and Record</subtitle>
-  <link href="/atom.xml" rel="self"/>
+<search>
   
-  <link href="http://www.majikang.com/"/>
-  <updated>2017-01-23T05:53:12.190Z</updated>
-  <id>http://www.majikang.com/</id>
   
-  <author>
-    <name>majikang</name>
     
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Suse11安装配置laravel开发环境</title>
-    <link href="http://www.majikang.com/posts/suse11%E9%85%8D%E7%BD%AElaravel%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html"/>
-    <id>http://www.majikang.com/posts/suse11配置laravel开发环境.html</id>
-    <published>2017-01-11T12:10:33.000Z</published>
-    <updated>2017-01-23T05:53:12.190Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Suse11安装配置php开发环境（未完待续）"><a href="#Suse11安装配置php开发环境（未完待续）" class="headerlink" title="Suse11安装配置php开发环境（未完待续）"></a>Suse11安装配置php开发环境（未完待续）</h3><h4 id="需要安装的软件"><a href="#需要安装的软件" class="headerlink" title="需要安装的软件"></a>需要安装的软件</h4><ul>
+    <entry>
+      <title><![CDATA[Suse11安装配置laravel开发环境]]></title>
+      <url>http://www.majikang.com/posts/suse11%E9%85%8D%E7%BD%AElaravel%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html</url>
+      <content type="html"><![CDATA[<h3 id="Suse11安装配置php开发环境（未完待续）"><a href="#Suse11安装配置php开发环境（未完待续）" class="headerlink" title="Suse11安装配置php开发环境（未完待续）"></a>Suse11安装配置php开发环境（未完待续）</h3><h4 id="需要安装的软件"><a href="#需要安装的软件" class="headerlink" title="需要安装的软件"></a>需要安装的软件</h4><ul>
 <li>Ubuntu 16.04</li>
 <li>Git 2.10.0</li>
 <li>PHP 7.0.12</li>
@@ -73,49 +57,19 @@
 <p><strong>server_tokens</strong>：并不会让nginx执行的速度更快，但它可以关闭在错误页面中的nginx版本数字，提高安全性。<br><strong>sendfile</strong>：可以让sendfile()发挥作用。sendfile()可以在磁盘和TCP socket之间互相拷贝数据(或任意两个文件描述符)。Pre-sendfile是传送数据之前在用户空间申请数据缓冲区。之后用read()将数据从文件拷贝到这个缓冲区，write()将缓冲区数据写入网络。sendfile()是立即将数据从磁盘读到OS缓存。因为这种拷贝是在内核完成的，sendfile()要比组合read()和write()以及打开关闭丢弃缓冲更加有效(更多有关于sendfile)。<br><strong>tcp_nopush</strong>：告诉nginx在一个数据包里发送所有头文件，而不一个接一个的发送。<br><strong>tcp_nodelay</strong>：告诉nginx不要缓存数据，而是一段一段的发送–当需要及时发送数据时，就应该给应用设置这个属性，这样发送一小块数据信息时就不能立即得到返回值。<br><strong>access_log</strong>：设置nginx是否将存储访问日志。关闭这个选项可以让读取磁盘IO操作更快(aka,YOLO)<br><strong>error_log</strong>：告诉nginx只能记录严重的错误：<br><strong>keepalive_timeout</strong>：给客户端分配keep-alive链接超时时间。服务器将在这个超时时间过后关闭链接。我们将它设置低些可以让ngnix持续工作的时间更长。<br><strong>client_header_timeout</strong> 和<strong>client_body_timeout</strong> 设置请求头和请求体(各自)的超时时间。我们也可以把这个设置低些。<br><strong>reset_timeout_connection</strong>：告诉nginx关闭不响应的客户端连接。这将会释放那个客户端所占有的内存空间。<br><strong>send_timeout</strong>：指定客户端的响应超时时间。这个设置不会用于整个转发器，而是在两次客户端读取操作之间。如果在这段时间内，客户端没有读取任何数据，nginx就会关闭连接。<br><strong>limit_conn_zone</strong>：设置用于保存各种key（比如当前连接数）的共享内存的参数。5m就是5兆字节，这个值应该被设置的足够大以存储（32K<em>5）32byte状态或者（16K</em>5）64byte状态。<br><strong>limit_conn</strong>：为给定的key设置最大连接数。这里key是addr，我们设置的值是100，也就是说我们允许每一个IP地址最多同时打开有100个连接。<br><strong>default_type</strong>：设置文件使用的默认的MIME-type。<br><strong>charset</strong>：设置头文件中默认的字符集<br><strong>gzip</strong>：告诉nginx采用gzip压缩的形式发送数据。这将会减少发送的数据量。<br><strong>gzip_disable</strong>：为指定的客户端禁用gzip功能。我们设置成IE6或者更低版本以使我们的方案能够广泛兼容。<br><strong>gzip_static</strong>：告诉nginx在压缩资源之前，先查找是否有预先gzip处理过的资源。这要求你预先压缩你的文件（在这个例子中被注释掉了），从而允许你使用最高压缩比，这样nginx就不用再压缩这些文件了（想要更详尽的gzip_static的信息，请点击这里）。<br><strong>gzip_proxied</strong>：允许或者禁止压缩基于请求和响应的响应流。我们设置为any，意味着将会压缩所有的请求。<br><strong>gzip_min_length</strong>：设置对数据启用压缩的最少字节数。如果一个请求小于1000字节，我们最好不要压缩它，因为压缩这些小的数据会降低处理此请求的所有进程的速度。<br><strong>gzip_comp_level</strong>：设置数据的压缩等级。这个等级可以是1-9之间的任意数值，9是最慢但是压缩比最大的。我们设置为4，这是一个比较折中的设置。<br><strong>gzip_type</strong>：设置需要压缩的数据格式。上面例子中已经有一些了，你也可以再添加更多的格式。<br><strong>open_file_cache</strong>：打开缓存的同时也指定了缓存最大数目，以及缓存的时间。我们可以设置一个相对高的最大时间，这样我们可以在它们不活动超过20秒后清除掉。<br><strong>open_file_cache_valid</strong>：在open_file_cache中指定检测正确信息的间隔时间。<br><strong>open_file_cache_min_uses</strong>：定义了open_file_cache中指令参数不活动时间期间里最小的文件数。<br><strong>open_file_cache_errors</strong>：指定了当搜索一个文件时是否缓存错误信息，也包括再次给配置中添加文件。我们也包括了服务器模块，这些是在不同文件中定义的。如果你的服务器模块不在这些位置，你就得修改这一行来指定正确的位置。</p>
 <p><strong>php7安装</strong></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Suse11安装配置php开发环境（未完待续）&quot;&gt;&lt;a href=&quot;#Suse11安装配置php开发环境（未完待续）&quot; class=&quot;headerlink&quot; title=&quot;Suse11安装配置php开发环境（未完待续）&quot;&gt;&lt;/a&gt;Suse11安装配置php开发环境
-    
-    </summary>
-    
-    
-      <category term="laravel" scheme="http://www.majikang.com/tags/laravel/"/>
-    
-      <category term="suse" scheme="http://www.majikang.com/tags/suse/"/>
-    
-      <category term="lnmp" scheme="http://www.majikang.com/tags/lnmp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>my first title</title>
-    <link href="http://www.majikang.com/posts/my-first-title.html"/>
-    <id>http://www.majikang.com/posts/my-first-title.html</id>
-    <published>2017-01-10T15:51:59.000Z</published>
-    <updated>2017-01-23T03:14:07.691Z</updated>
-    
-    <content type="html"><![CDATA[<p>    用了两年的虚拟主机到期忘记续费，导致以前的数据全丢。。。哭瞎！付费的不靠谱还是基佬相亲平台值得信赖，希望写一点有深度有思考的文章，同时也作为自己学习资料的一个记录和总结。<br>    使用php进行web开发辗转两年多，从一个入门的新手到现在能独立开发和维护的开发者，途中遇到很多的问题和挫折，感谢带我入门的学长和深夜码代码到凌晨的自己，在前进的路上积攒许多知识和经验。<br>    希望新的一年，自己在技术上能有所突破，找到深入发展的一个方向，突破自身瓶颈，熟悉软件周期流程，扩展技术广度，能有机会为开源项目做自己的一点贡献！</p>
+    <entry>
+      <title><![CDATA[my first title]]></title>
+      <url>http://www.majikang.com/posts/my-first-title.html</url>
+      <content type="html"><![CDATA[<p>    用了两年的虚拟主机到期忘记续费，导致以前的数据全丢。。。哭瞎！付费的不靠谱还是基佬相亲平台值得信赖，希望写一点有深度有思考的文章，同时也作为自己学习资料的一个记录和总结。<br>    使用php进行web开发辗转两年多，从一个入门的新手到现在能独立开发和维护的开发者，途中遇到很多的问题和挫折，感谢带我入门的学长和深夜码代码到凌晨的自己，在前进的路上积攒许多知识和经验。<br>    希望新的一年，自己在技术上能有所突破，找到深入发展的一个方向，突破自身瓶颈，熟悉软件周期流程，扩展技术广度，能有机会为开源项目做自己的一点贡献！</p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;    用了两年的虚拟主机到期忘记续费，导致以前的数据全丢。。。哭瞎！付费的不靠谱还是基佬相亲平台值得信赖，希望写一点有深度有思考的文章，同时也作为自己学习资料的一个记录和总结。&lt;br&gt;    使用php进行web开发辗转两年多，从一个入门的新手到现在能独立开发和维护的开发
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://www.majikang.com/posts/hello-world.html"/>
-    <id>http://www.majikang.com/posts/hello-world.html</id>
-    <published>2017-01-09T15:22:35.000Z</published>
-    <updated>2017-01-23T02:56:02.289Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>http://www.majikang.com/posts/hello-world.html</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
@@ -125,14 +79,8 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
-    
-  </entry>
   
-</feed>
+  
+</search>
