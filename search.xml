@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title><![CDATA[golang开发入门指南]]></title>
+      <url>http://www.majikang.com/posts/golang%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97.html</url>
+      <content type="html"><![CDATA[<h3 id="0-前言"><a href="#0-前言" class="headerlink" title="0.前言"></a>0.前言</h3><p>因为很久之前接触过go语言，了解相关特性，恰好公司近期开发一套关于安全密钥方面的系统，涉及到tcp、http协议，考虑到go在网络编程和并发、gc方面有着天生的优势，同时系统需要代码级别的加密，而go是一种编译型语言。本来计划使用熟悉的PHP框架workman，现通过三天时间调研，一周撸出了第一版的基础代码，第二周使用beego框架重构撸出了第二版，第三周把指令集独立为包、添加tcp连接池扩大并发，目前仍然在优化。。。项目代码和思路不能共享，将公司内部分享的学习指南分享一下。</p>
+<h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h3><p><strong>Go</strong>是Google开发的一种编译型，可并行化，并具有垃圾回收功能的编程语言。针对多处理器系统应用程序的编程进行了优化，硬件层面上支持主流的32位和64位的x86平台，同时也支持32位的ARM架构，操作系统层面上支持Windows,、苹果Mac OS X、Linux和FreeBSD在使用Go编译的程序可以媲美C或C++代码的速度，而且更加安全、支持并行进程。</p>
+<p><strong>beego</strong> 是一个快速开发 Go 应用的 HTTP 框架，他可以用来快速开发 API、Web 及后端服务等各种应用，是一个 RESTful 的框架。具体使用参考<a href="https://beego.me/docs/intro/" target="_blank" rel="external">官方文档</a>。</p>
+<h3 id="2-开发工具"><a href="#2-开发工具" class="headerlink" title="2.开发工具"></a>2.开发工具</h3><ul>
+<li><p><strong>LiteIDE</strong>: LiteIDE是一款专门为Go语言开发的跨平台轻量级集成开发环境（IDE）</p>
+</li>
+<li><p><strong>IntelliJ IDEA</strong>:  idea通过一个插件来支持go语言的高亮语法，代码提示和重构实现</p>
+</li>
+<li><p><strong>Eclipse</strong></p>
+</li>
+<li><p><strong>Sublime Text</strong>: Sublime+ GoSublime + gocode + MarGo的组合。</p>
+</li>
+<li><p><strong>Vim</strong></p>
+</li>
+<li><strong>gogland</strong></li>
+<li><a href="https://beego.me/docs/install/bee.md" target="_blank" rel="external"><strong>bee 工具</strong></a><br><code>个人使用gogland、idea，缺点: idea断点调试支持不好</code></li>
+</ul>
+<h3 id="3-语法知识"><a href="#3-语法知识" class="headerlink" title="3.语法知识"></a>3.语法知识</h3><p><a href="http://www.ctolib.com/docs-go-web-programming-c-index.html" target="_blank" rel="external"><strong>GO WEB编程</strong></a>(优先环境配置、语言基础、web基础、错误处理、部署维护)</p>
+<p><strong><a href="https://beego.me/docs/intro/" target="_blank" rel="external">beego API</a></strong>(路由、控制器、进程监控、API自动文档、应用部署)</p>
+<p><a href="http://www.01happy.com/supervisor-golang-daemon/" target="_blank" rel="external"><strong>supervisor</strong>守护进程</a></p>
+<h3 id="4-代码示例解析"><a href="#4-代码示例解析" class="headerlink" title="4.代码示例解析"></a>4.代码示例解析</h3><p>参考代码内注释（待部分代码分离后共享）</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[my first title]]></title>
       <url>http://www.majikang.com/posts/my-first-title.html</url>
       <content type="html"><![CDATA[<p>    用了两年的虚拟主机到期忘记续费，导致以前的数据全丢。。。哭瞎！付费的不靠谱还是基佬相亲平台值得信赖，希望写一点有深度有思考的文章，同时也作为自己学习资料的一个记录和总结。<br>    使用php进行web开发辗转两年多，从一个入门的新手到现在能独立开发和维护的开发者，途中遇到很多的问题和挫折，感谢带我入门的学长和深夜码代码到凌晨的自己，在前进的路上积攒许多知识和经验。<br>    希望新的一年，自己在技术上能有所突破，找到深入发展的一个方向，突破自身瓶颈，熟悉软件周期流程，扩展技术广度，能有机会为开源项目做自己的一点贡献！</p>
